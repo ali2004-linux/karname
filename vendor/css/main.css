@@ -1,0 +1,13 @@
+@font-face {
+    font-family: iran;
+    src: url("../IRANSansMobile\(FaNum\)_Bold.ttf");
+}
+#app{
+    font-family: iran;
+}
+.line-th{
+    text-decoration: line-through;
+}
+[v-cloak]{
+    display:none;
+}

@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vendor/css/bootstrap.fa.min.css">
+    <link rel="stylesheet" href="./vendor/css/main.css">
+    <script src="./vendor/js/vue.js"></script>
+
+</head>
+<body>
+    <div id="app" v-cloak class="container mt-5">
+        <div class="row mt-1" style="max-width: 600px;">
+            <div class="col">
+                <input type="text" v-model="namec" placeholder="نام درس" class="form-control">
+            </div>
+            <div class="col">
+                <input type="number" @keyup.enter="addcource()" v-model="mark" placeholder="نمره" class="form-control">
+            </div>
+            <div class="col">
+                <button @click="addcource()" class="btn btn-primary">اضافه کردن</button>
+            </div>
+        </div><br><br>
+        <div v-show="m" class="alert text-center alert-success">معدل : {{totalmark()}}</div>
+
+        <table class="table mt-5 table-hover table-bordered ">
+            <thead>
+                <tr>
+                    <th scope="col">نام درس</th>
+                    <th scope="col">نمره</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="c, index in cour"> 
+                    <th>{{c.name}}</th>
+                    <th>{{c.mark}}</th>
+                </tr>
+            </tbody>
+        </table>
+        <div v-if="s" class="alert alert-danger text-center">شما هنوز درسی را وارد نکرده اید</div>
+    </div>
+    <script src="./vendor/js/app.js"></script>
+</body>
+</html>
